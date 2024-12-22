@@ -32,6 +32,22 @@ docker compose exec kafka kafka-console-consumer.sh \
     --topic "NTH_TRANSACTIONS_V1" --from-beginning
 ```
 
+Here is a payload example.
+
+```json
+{
+    "tx_id": "32686c3b-8d55-446c-8bd0-ab48f2694f5c",
+    "customer_id": "c000269995",
+    "terminal_id": "t001",
+    "tx_datetime": "2024-12-22 13:42:48.847598",
+    "tx_amount": 477.58,
+    "tx_fraud_suspect": true,
+    "tx_fraud_reason": 1
+}
+```
+
+Other data files can be found in the [data](./data) folder.
+
 To shutdown the services, you just need to execute...
 
 ```bash
