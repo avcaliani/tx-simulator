@@ -43,7 +43,7 @@ def new_transaction() -> Tuple[str, dict]:
     transaction = {
         "tx_id": str(uuid.uuid4()),
         "customer_id": customer_id,
-        "terminal_id": f"t{random.randint(1, 100):03d}",
+        "terminal_id": f"t{random.randint(1, 22):03d}",
         "tx_datetime": datetime.now(UTC).strftime("%Y-%m-%d %H:%M:%S.%f"),
         "tx_amount": round(random.uniform(0.1, 1_000_000.0), 2),
         "tx_fraud_suspect": is_suspect,
