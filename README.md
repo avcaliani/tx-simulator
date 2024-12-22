@@ -1,7 +1,7 @@
 # 🏦 Transaction Simulator
 
 ![License](https://img.shields.io/github/license/avcaliani/tx-simulator?logo=apache&color=lightseagreen)
-![#](https://img.shields.io/badge/python-3.13.x-blue.svg?logo=python&logoColor=white)
+![#](https://img.shields.io/badge/python-3.11.x-blue.svg?logo=python&logoColor=white)
 ![#](https://img.shields.io/badge/kafka-3.9.x-lightgray.svg?logo=apache-kafka&logoColor=white)
 
 ## What is this project?
@@ -19,16 +19,17 @@ You just need to execute the services 🚀
 ```bash
 # Up the Kafka nodes 👇
 docker compose up -d
-```
 
-Then, execute the Python script.
-
-```bash
 # Activate the VEnv 👇
 source .venv/bin/activate
 
 # Run the script 👇
 python main.py
+
+# In another terminal, you can check the messages...
+docker compose exec kafka kafka-console-consumer.sh \
+    --bootstrap-server "localhost:9092" \
+    --topic "NTH_TRANSACTIONS_V1" --from-beginning
 ```
 
 To shutdown the services, you just need to execute...
